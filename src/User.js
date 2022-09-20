@@ -8,7 +8,12 @@ class User extends Component{
             user: {}
         }
     }
-    componentDidUpdate(){
+    async componentDidUpdate(prevProps){
+        if(prevProps.selectedUserId !== this.props.selectedUserId){
+            const userId = this.props.selectedUserId*1
+            const user = (await axios.get(`/api/users/${userId}`)).data
+            this.setState({user})
+        }
         console.log(this.props)
     }
     async componentDidMount(){
