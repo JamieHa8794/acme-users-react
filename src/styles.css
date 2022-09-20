@@ -1,6 +1,9 @@
 body{
-    background-color: green
+    background-color: lightseagreen
 }
-h2{
+h1{
     font-family: fantasy;
+}
+li{
+    list-style: none;
 }
